@@ -1,7 +1,7 @@
-# 01_02 Challenge: Deploy a Jenkins server
+# 01_03 Solution: Deploy a Jenkins server
 There are three basic requirements for this challenge:
 
-1. Use the latest version of Ubuntu Server.
+1. Deploy a server running the latest version of Ubuntu Server.
 1. Install NGINX as a proxy to Jenkins.
 1. Install and configure Jenkins.
 
@@ -31,9 +31,9 @@ However, You can still follow along with Jenkins installed on your local system.
 ## The Solution uses Amazon Web Services
 The solution demonstrated in the courseI uses the Amazon web services public Cloud platform. Prequisites to the solution include:
 
-- Creating a key pair for SSH connections
-- Creating an ec2 instance using a Ubuntu AMI
-- Creating an elastic IP for persistent DNS assignment
+- Create a key pair for SSH connections
+- Create an ec2 instance using a Ubuntu AMI
+- Create an elastic IP for persistent DNS assignment
 
 ## Exercise files are available for this challenge.
 There's a script that will update the Ubuntu OS, install NGINX, and install Jenkins. So you won’t have to do an installation from scratch.
