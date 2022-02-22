@@ -2,8 +2,13 @@
 # vi: ft=bash
 
 echo "# $(date) Installation is starting."
-exec > >(tee /var/log/user-data.log|logger -t user-data -s 2>/dev/console) 2>&1
 
+# Uncomment the following line if you are using this script
+# as user data for an EC2 instance on AWS.
+# Output from the installation will be written to /var/log/user-data.log
+#exec > >(tee /var/log/user-data.log|logger -t user-data -s 2>/dev/console) 2>&1
+
+echo "# $(date) Instatll jenkins key and package configuration..."
 curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | tee \
     /usr/share/keyrings/jenkins-keyring.asc > /dev/null
 
@@ -12,6 +17,7 @@ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
     /etc/apt/sources.list.d/jenkins.list > /dev/null
 
 # install java, nginx, and jenkins
+echo "# $(date) Install Java 11, NGINX, and Jenkins..."
 apt update
 apt-get -qq upgrade
 
@@ -26,20 +32,26 @@ apt-get -qq install \
 apt-get -qq install jenkins
 
 # configure jenkins
+echo "# $(date) Configure Jenkins..."
 
 ## skip the installation wizard at startup
+echo "# $(date) Skip the installation wizard on first boot..."
 echo "JAVA_ARGS=\"-Djenkins.install.runSetupWizard=false\"" >> /etc/default/jenkins
 
 ## download the list of plugins
+echo "# $(date) Download the list of plugins..."
 wget https://raw.githubusercontent.com/jenkinsci/jenkins/master/core/src/main/resources/jenkins/install/platform-plugins.json
 
 ## get the suggested plugins
+echo "# $(date) Use the keyword 'suggest' to find the suggested plugins in the list..."
 grep suggest platform-plugins.json | cut -d\" -f 4 | tee suggested-plugins.txt
 
 ## download the plugin installation tool
+echo "# $(date) Download the plugin installation tool"
 wget https://github.com/jenkinsci/plugin-installation-manager-tool/releases/download/2.12.3/jenkins-plugin-manager-2.12.3.jar
 
 ## run the plugin installation tool
+echo "# $(date) Run the plugin installation tool..."
 /usr/bin/java -jar ./jenkins-plugin-manager-2.12.3.jar \
 	--verbose \
     --plugin-download-directory=/var/lib/jenkins/plugins \
@@ -48,9 +60,11 @@ wget https://github.com/jenkinsci/plugin-installation-manager-tool/releases/down
 ## because the plugin installation tool runs as root, ownership on
 ## the plugin dir needs to be changed back to jenkins:jenkins
 ## otherwise, jenkins won't be able to install the plugins
+echo "# $(date) Update the permissions on the plugins directory..."
 chown -R jenkins:jenkins /var/lib/jenkins/plugins
 
 # configure nginx
+echo "# $(date) Configure NGINX..."
 unlink /etc/nginx/sites-enabled/default
 
 tee /etc/nginx/conf.d/jenkins.conf <<EOF
@@ -69,9 +83,11 @@ server {
 }
 EOF
 
+echo "# $(date) Reload NGINX to pick up the new configuration..."
 systemctl reload nginx
 
 # install docker
+echo "# $(date) Install docker..."
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | \
     gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
@@ -87,6 +103,9 @@ systemctl enable containerd.service
 usermod -aG docker ubuntu
 usermod -aG docker jenkins
 
+echo "# $(date) Restart Jenkins..."
 systemctl restart jenkins
+
+echo "# $(date) Copy the initial admin password to the root user's home directory..."
 cp /var/lib/jenkins/secrets/initialAdminPassword ~
 echo "$(date) Installation is complete."
