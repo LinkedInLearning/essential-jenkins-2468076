@@ -15,7 +15,9 @@ A pipeline configuration has three required sections.
 - at least one `stage` and at least one `step`
 
 ## A multi-stage pipeline
-Create a pipeline job and paste in the following code to create a multi-stage pipeline:
+Create a pipeline job and paste in the following code to create a multi-stage pipeline.
+
+Run the job and examine the output.
 
 ```Jenkinsfile
 pipeline {
