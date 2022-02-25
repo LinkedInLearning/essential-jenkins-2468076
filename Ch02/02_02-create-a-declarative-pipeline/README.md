@@ -5,6 +5,8 @@ Jenkins support two pipeline formats: Scripted and declarative.
 
 For the rest of this course, we’ll be using the declarative format.
 
+Declarative pipelines start with the word pipeline followed by curly braces and instructions for Jenkins.
+
 ## Required sections in the pipeline configuration
 A pipeline configuration has three required sections.
 
