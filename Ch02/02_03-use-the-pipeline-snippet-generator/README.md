@@ -19,7 +19,7 @@ As you install plug-ins or extend the functionality of your Jenkins server, you'
 
 For more information on these additional steps, you'll want to take a look at the Pipeline Steps Reference in the Jenkins documentation.
 
-[More pipeline steps](Additional pipeline steps for tools and plugins)
+[More pipeline steps](https://www.jenkins.io/doc/pipeline/steps/)
 
 # Pipeline syntax generator
 Jenkins provides a pipeline syntax generator that we can use to crate Snippets of code that we can copy into a pipeline.
