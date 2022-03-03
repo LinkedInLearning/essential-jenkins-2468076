@@ -1,7 +1,7 @@
 # A Pipeline With Global Variables
 This pipeline uses echo steps to print most of the global variables avaiable to a pipeline job.
 
-Use the following pipeline and view the results in the "Pipeline Steps" view.
+Create a job with the following pipeline and view the results in the "Pipeline Steps" view.
 
 ```Jenkinsfile
 pipeline {

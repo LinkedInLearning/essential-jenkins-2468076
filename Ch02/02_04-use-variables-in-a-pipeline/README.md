@@ -1,64 +1,56 @@
 # 02_04 Use variables in a pipeline
+Jenkins exposes three different types of variables that we can use in our pipeline:
 
+- Environment variables
+- currentBuild variables
+- Parameters.
+
+Variables let us use dynamic values in pipelines.
+
+This lesson will focus on environment variables and current build variables. We'll use another lesson to discuss parameters.
+
+# Environment variables
+Environment variables can be set globally for an entire pipeline. Or they can be set locally in a stage.
+
+# currentBuild variables
+Current build variables allow pipeline steps to reference the state of a build while its running.
+
+# Global Variables Reference
+You can find documentation for global variables by starting on the homepage for a pipeline job and then viewing:
+
+- `Pipeline Syntax` &rarr; `Global Variables Reference`
+# Global and local variables
+Use the following pipeline to see a demonstration of how global environment variables can be overridden by local environment variables.
 
 ```Jenkinsfile
 pipeline {
     agent any
+    environment {
+        MAX_SIZE = 10
+        MIN_SIZE = 1
+    }
     stages {
-        stage('Environment Variables') {
+        stage('Default Scale') {
             steps {
-                echo  "BUILD_DISPLAY_NAME         =  ${BUILD_DISPLAY_NAME}"
-                echo  "BUILD_ID                   =  ${BUILD_ID}"
-                echo  "BUILD_NUMBER               =  ${BUILD_NUMBER}"
-                echo  "BUILD_TAG                  =  ${BUILD_TAG}"
-                echo  "BUILD_URL                  =  ${BUILD_URL}"
-                echo  "CI                         =  ${CI}"
-                echo  "EXECUTOR_NUMBER            =  ${EXECUTOR_NUMBER}"
-                echo  "JENKINS_HOME               =  ${JENKINS_HOME}"
-                echo  "JENKINS_URL                =  ${JENKINS_URL}"
-                echo  "JOB_BASE_NAME              =  ${JOB_BASE_NAME}"
-                echo  "JOB_DISPLAY_URL            =  ${JOB_DISPLAY_URL}"
-                echo  "JOB_NAME                   =  ${JOB_NAME}"
-                echo  "JOB_URL                    =  ${JOB_URL}"
-                echo  "NODE_LABELS                =  ${NODE_LABELS}"
-                echo  "NODE_NAME                  =  ${NODE_NAME}"
-                echo  "RUN_ARTIFACTS_DISPLAY_URL  =  ${RUN_ARTIFACTS_DISPLAY_URL}"
-                echo  "RUN_CHANGES_DISPLAY_URL    =  ${RUN_CHANGES_DISPLAY_URL}"
-                echo  "RUN_DISPLAY_URL            =  ${RUN_DISPLAY_URL}"
-                echo  "RUN_TESTS_DISPLAY_URL      =  ${RUN_TESTS_DISPLAY_URL}"
-                echo  "WORKSPACE                  =  ${WORKSPACE}"
-                echo  "WORKSPACE_TMP              =  ${WORKSPACE_TMP}"
+                echo "MAX_SIZE = ${env.MAX_SIZE}"
+                echo "MIN_SIZE = ${env.MIN_SIZE}"
             }
         }
-        stage('currentBuild Variables') {
+        stage('Scale by 10x') {
+            environment {
+                MAX_SIZE = 100
+                MIN_SIZE = 10
+            }
             steps {
-                echo  "currentBuild.absoluteUrl              =  ${currentBuild.absoluteUrl}"
-                echo  "currentBuild.buildVariables           =  ${currentBuild.buildVariables}"
-                echo  "currentBuild.currentResult            =  ${currentBuild.currentResult}"
-                echo  "currentBuild.description              =  ${currentBuild.description}"
-                echo  "currentBuild.displayName              =  ${currentBuild.displayName}"
-                echo  "currentBuild.duration                 =  ${currentBuild.duration}"
-                echo  "currentBuild.durationString           =  ${currentBuild.durationString}"
-                echo  "currentBuild.fullDisplayName          =  ${currentBuild.fullDisplayName}"
-                echo  "currentBuild.fullProjectName          =  ${currentBuild.fullProjectName}"
-                echo  "currentBuild.id                       =  ${currentBuild.id}"
-                echo  "currentBuild.keepLog                  =  ${currentBuild.keepLog}"
-                echo  "currentBuild.nextBuild                =  ${currentBuild.nextBuild}"
-                echo  "currentBuild.number                   =  ${currentBuild.number}"
-                echo  "currentBuild.previousBuild            =  ${currentBuild.previousBuild}"
-                echo  "currentBuild.previousBuildInProgress  =  ${currentBuild.previousBuildInProgress}"
-                echo  "currentBuild.previousBuiltBuild       =  ${currentBuild.previousBuiltBuild}"
-                echo  "currentBuild.previousCompletedBuild   =  ${currentBuild.previousCompletedBuild}"
-                echo  "currentBuild.previousFailedBuild      =  ${currentBuild.previousFailedBuild}"
-                echo  "currentBuild.previousNotFailedBuild   =  ${currentBuild.previousNotFailedBuild}"
-                echo  "currentBuild.previousSuccessfulBuild  =  ${currentBuild.previousSuccessfulBuild}"
-                echo  "currentBuild.projectName              =  ${currentBuild.projectName}"
-                echo  "currentBuild.result                   =  ${currentBuild.result}"
-                echo  "currentBuild.startTimeInMillis        =  ${currentBuild.startTimeInMillis}"
-                echo  "currentBuild.timeInMillis             =  ${currentBuild.timeInMillis}"
-                echo  "currentBuild.upstreamBuilds           =  ${currentBuild.upstreamBuilds}"
+                echo "MAX_SIZE = ${env.MAX_SIZE}"
+                echo "MIN_SIZE = ${env.MIN_SIZE}"
             }
         }
     }
 }
+```
 
+# Bonus: Pipeline that prints "most" global variables
+View the following file for a bonus pipeline that prints "most" global variables.
+
+[PIPELINE_WITH_MOST_VARIABLES](PIPELINE_WITH_MOST_VARIABLES.md)
