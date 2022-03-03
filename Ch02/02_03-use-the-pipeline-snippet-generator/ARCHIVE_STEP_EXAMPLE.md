@@ -3,11 +3,17 @@
 ```Jenkinsfile
 pipeline {
     agent any
+
     stages {
-        stage('Report') {
+        stage('Hello') {
             steps {
+                echo 'Hello World'
                 sh 'echo "this is a report" > report.txt'
-                archiveArtifacts allowEmptyArchive: true, artifacts: '*.txt', fingerprint: true, followSymlinks: false, onlyIfSuccessful: true
+                archiveArtifacts allowEmptyArchive: true,
+                    artifacts: '*.txt',
+                    fingerprint: true,
+                    followSymlinks: false,
+                    onlyIfSuccessful: true
             }
         }
     }
