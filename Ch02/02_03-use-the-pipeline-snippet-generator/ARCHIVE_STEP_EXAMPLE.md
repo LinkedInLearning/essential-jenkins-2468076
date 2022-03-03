@@ -5,9 +5,8 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Report') {
             steps {
-                echo 'Hello World'
                 sh 'echo "this is a report" > report.txt'
                 archiveArtifacts allowEmptyArchive: true,
                     artifacts: '*.txt',
