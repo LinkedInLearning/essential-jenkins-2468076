@@ -18,7 +18,7 @@ pipeline {
         stage ('Deploy to non-production environments') {
             when {
                 // Only deploy if the environment is NOT production
-                expression { params.REQUESTED_ACTION != 'PRODUCTION' }
+                expression { params.ENVIRONMENT != 'PRODUCTION' }
             }
             steps {
                 echo "Deploying to ${params.ENVIRONMENT}"
