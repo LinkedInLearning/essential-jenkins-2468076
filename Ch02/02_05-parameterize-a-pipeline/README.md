@@ -10,7 +10,7 @@ pipeline {
 }
 ```
 
-Parameters are accessed by their name preceded by the  “params” prefix.
+Parameters are accessed by their name preceded by the  `params` prefix.
 
 If they’re used in a string need to have a dollar sign at the beginning and can also be wrapped in curly braces.
 ```
