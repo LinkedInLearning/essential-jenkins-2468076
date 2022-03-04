@@ -23,7 +23,7 @@ A `when` block can use three built-in conditions to determine if the the steps i
 Expression conditions provide the most flexibility for conditionals statements.  We can use Groovy expressions along with parameters and other variables to build a statement that returns true or false.
 
 Review the following document for more information on Groovy expressions:
-[The Apache Groovy programming language - Operators](https://groovy-lang.org/operators.html)
+- [The Apache Groovy programming language - Operators](https://groovy-lang.org/operators.html)
 
 ## Manual Approvals
 The input step pauses a triggered pipeline and waits for manual interaction to determine if the pipeline should proceed or abort.
@@ -31,7 +31,7 @@ The input step pauses a triggered pipeline and waits for manual interaction to d
 input message: 'Confirm deployment to production...', ok: 'Deploy'
 ```
 Review the following document for more information on the `input` step:
-[Pipeline: Input Step](https://www.jenkins.io/doc/pipeline/steps/pipeline-input-step/)
+- [Pipeline: Input Step](https://www.jenkins.io/doc/pipeline/steps/pipeline-input-step/)
 
 ## Example using conditional and manual approval
 Use the following pipeline script in a new project to experiment with conditionals and manual approvals.
