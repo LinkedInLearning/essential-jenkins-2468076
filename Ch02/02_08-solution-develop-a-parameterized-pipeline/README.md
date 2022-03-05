@@ -64,11 +64,11 @@ pipeline {
          description: 'Choose the environment for this deployment.', 
          name: 'ENVIRONMENT'
       
-      password defaultValue: '1234567890', 
+      password defaultValue: '123ABC', 
          description: 'Enter the API key to use for this deployment.', 
          name: 'API_KEY'
       
-      text defaultValue: 'This is the default changelog message.', 
+      text defaultValue: 'This is the change log.', 
          description: 'Enter the components that were changed in this deployment.', 
          name: 'CHANGELOG'
     }    
