@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                echo "This step tests the compiled project"
+                echo "This step tests the project"
             }
         }
         }
@@ -15,7 +15,7 @@ pipeline {
         stage('Report') {
             steps {
                 echo "This stage generates a report"
-                sh 'printf \"TEST COMPLETE\" > report.txt'
+                sh 'printf \"This is the change log.\" > report.txt'
                 archiveArtifacts allowEmptyArchive: true, 
                     artifacts: '*.txt', 
                     fingerprint: true, 
