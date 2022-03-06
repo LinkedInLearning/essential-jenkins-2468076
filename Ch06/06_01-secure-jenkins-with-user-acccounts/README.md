@@ -32,4 +32,6 @@ View the following documents for more information on security configurations in 
 
 - [Managing Security](https://www.jenkins.io/doc/book/security/managing-security/)
 
+- [Permissions](https://www.jenkins.io/doc/book/security/permissions/)
+
 - [Disable Access Control](https://www.jenkins.io/doc/book/security/access-control/disable/)
