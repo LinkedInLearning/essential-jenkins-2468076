@@ -1,1 +1,35 @@
 # 06_01 Secure Jenkins with user acccounts
+Jenkins provides some security features by default.  For example, new installations are locked and require an initial admin password.
+
+Jenkins also allows you to create user accounts with usernames and passwords.  This is a common approach for setting up boundaries for who can log in.
+
+## Security Realms
+Briefly, security realm controls how a person is authenticated to access a resource.
+
+Jenkins provides a built-in security realm and can be configured to work with external providers.
+
+## Authorization
+The default authorization allows all authenticated users to perform any operations.
+
+A best practice is to limit admin permission to select users and give limited permissions to other users as needed.
+
+## Matrix-based Security
+To configure user permissions, most Jenkins installations will use the [Matrix authorization strategy plugin](https://plugins.jenkins.io/matrix-auth/).  This is one of the suggested plugins that gets installed in most Jenkins installations.
+
+Using a matrix strategy, permissions are assigned to each user individually.  
+
+In addition, each user is given specific permission to perform certain actions.
+
+## ATTENTION: Switching to Matrix-based Security
+When setting up Matrix base security, please be sure to give your user administrative permissions. Also, if you created an admin user, assign admin permissions to the admin user as well.
+
+_*If you miss assigning your user admin permissions, you run the risk of locking yourself out of your Jenkins server.*_
+
+See the resources for more inforation.
+
+## Resources
+View the following documents for more information on security configurations in Jenkins.
+
+- [Managing Security](https://www.jenkins.io/doc/book/security/managing-security/)
+
+- [Disable Access Control](https://www.jenkins.io/doc/book/security/access-control/disable/)
