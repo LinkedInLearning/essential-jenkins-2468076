@@ -2,7 +2,6 @@ flask
 flake8
 pip
 pylint
-pylint_junit
 pytest
 pytest-flask
 pytest-html
