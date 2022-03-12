@@ -24,12 +24,7 @@ pipeline {
             steps {
                 dir("${env.WORKSPACE}/Ch05/05_02-code-coverage-tests-and-reports"){
                     sh '.env/bin/flake8 --ignore=E501,E231 *.py'
-                    sh('''
-                        .env/bin/pylint --errors-only \
-                            --disable=C0301 \
-                            --disable=C0326 \
-                            --output-format=pylint_junit.JUnitReporter *.py > pylint_junit.xml
-                    ''')
+                    sh '.env/bin/pylint --errors-only --disable=C0301 --disable=C0326 *.py'
                 }
             }
         }
