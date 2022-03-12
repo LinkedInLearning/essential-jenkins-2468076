@@ -3,8 +3,8 @@ pipeline {
 
     options {
         buildDiscarder(logRotator(daysToKeepStr: '10', numToKeepStr: '10'))
-            timeout(time: 12, unit: 'HOURS')
-            timestamps()
+        timeout(time: 12, unit: 'HOURS')
+        timestamps()
     }
 
     triggers {
@@ -38,20 +38,24 @@ pipeline {
                 }
             }
         }
-        stage('Report') {
+        stage('Build') {
             steps {
-                dir("${env.WORKSPACE}/Ch05/05_02-publish-reports"){
-                    sh('''
-                        venv/bin/coverage xml
-                    ''')
-                }
+                echo "Build the application in this step..."
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo "Deploy the application in this step..."
             }
         }
     }
 
     post {
         always {
+            sh 'venv/bin/coverage xml'
+
             junit allowEmptyResults: true, testResults: '**/pytest_junit.xml'
+
             junit allowEmptyResults: true, testResults: '**/pylint_junit.xml'
 
             publishCoverage adapters: [cobertura('**/coverage.xml')],
