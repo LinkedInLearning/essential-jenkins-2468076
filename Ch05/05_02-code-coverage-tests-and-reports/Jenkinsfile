@@ -33,8 +33,6 @@ pipeline {
                 dir("${env.WORKSPACE}/Ch05/05_02-code-coverage-tests-and-reports"){
                     sh('''
                         .env/bin/coverage run -m pytest -v test_*.py \
-                            --self-contained-html \
-                            --html=./reports/pytest_report.html \
                             --junitxml=./reports/pytest_report.xml
                     ''')
                 }
@@ -44,7 +42,6 @@ pipeline {
             steps {
                 dir("${env.WORKSPACE}/Ch05/05_02-code-coverage-tests-and-reports"){
                     sh('''
-                        .env/bin/coverage html
                         .env/bin/coverage xml
                     ''')
                 }
@@ -56,7 +53,7 @@ pipeline {
         always {
             junit allowEmptyResults: true, testResults: '**/pytest_report.xml'
 
-            publishCoverage adapters: [jacocoAdapter('coverage.xml')],
+            publishCoverage adapters: [jacocoAdapter('**/coverage.xml')],
                 sourceFileResolver: sourceFiles('STORE_LAST_BUILD')
 
             archiveArtifacts allowEmptyArchive: true,
