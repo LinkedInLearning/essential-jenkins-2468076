@@ -48,7 +48,7 @@ pipeline {
         always {
             junit allowEmptyResults: true, testResults: '**/*.xml'
             archiveArtifacts allowEmptyArchive: true,
-                artifacts: '*.html,*.xml',
+                artifacts: '**/*.html,**/*.xml',
                 fingerprint: true,
                 followSymlinks: false
         }
