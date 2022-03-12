@@ -1,0 +1,77 @@
+[
+  {
+    "guid": "05024756-765e-41a9-89d7-1407436d9a58",
+    "school": "Iowa State University",
+    "mascot": "Cy",
+    "nickname": "Cyclones",
+    "location": "Ames, IA, USA",
+    "latlong": "42.026111,-93.648333"
+  },
+  {
+    "guid": "27a85510-1ccd-4e44-81bd-92b5ba0ae402",
+    "school": "Baylor University",
+    "mascot": "Judge",
+    "nickname": "Bears",
+    "location": "Waco, TX, USA"
+  },
+  {
+    "guid": "9623f598-ca93-4d4e-bbb7-3e18320a923a",
+    "school": "University of Kansas",
+    "mascot": "Big Jay",
+    "nickname": "Jayhawks",
+    "location": "Lawrence, KS, USA",
+    "latlong": "38.958056,-95.247778"
+  },
+  {
+    "guid": "b4ef9980-1562-4996-b8a0-320f8be3d4ee",
+    "school": "Kansas State University",
+    "mascot": "Willie the Wildcat",
+    "nickname": "Wildcats",
+    "location": "Manhattan, KS, USA",
+    "latlong": "39.191667, -96.580833"
+  },
+  {
+    "guid": "daf47311-d6b8-4b52-8093-3e33ef5e59e5",
+    "school": "University of Oklahoma",
+    "mascot": "Boomer and Sooner",
+    "nickname": "Sooners",
+    "location": "Norman, OK, USA"
+  },
+  {
+    "guid": "d23d0b38-a42b-42dd-a58c-6bf5661f5f52",
+    "school": "Oklahoma State University",
+    "mascot": "",
+    "nickname": "Cowboys",
+    "location": "Stillwater, OK, USA",
+    "latlong": "36.132222, -97.080833"
+  },
+  {
+    "guid": "20bdc947-ba72-4476-9983-232c775d0b31",
+    "school": "Texas Christian University",
+    "mascot": "Horned Frog",
+    "nickname": "Horned Frogs",
+    "location": "Fort Worth, TX, USA"
+  },
+  {
+    "guid": "f6e17d21-1616-44ff-9655-8f12296abdd8",
+    "school": "University of Texas at Austin",
+    "mascot": "Hook 'em",
+    "nickname": "Longhorns",
+    "location": "Austin, TX, USA"
+  },
+  {
+    "guid": "5992771b-359c-4e58-8faf-10f3965b9ea8",
+    "school": "Texas Tech University",
+    "mascot": "The Masked Rider and Raider Red",
+    "nickname": "Red Raiders",
+    "location": "Lubbock, TX, USA"
+  },
+  {
+    "guid": "bf98a44c-e26f-47ae-8f94-1a1b61a9c414",
+    "school": "West Virginia University",
+    "mascot": "The Mountaineer",
+    "nickname": "Mountaineers",
+    "location": "Morgantown, WV, USA",
+    "latlong": "39.63582, -79.95453"
+  }
+]
