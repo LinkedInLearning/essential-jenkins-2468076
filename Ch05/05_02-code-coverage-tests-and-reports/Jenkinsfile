@@ -53,7 +53,7 @@ pipeline {
         always {
             junit allowEmptyResults: true, testResults: '**/pytest_report.xml'
 
-            publishCoverage adapters: [jacocoAdapter('**/coverage.xml')],
+            publishCoverage adapters: [cobertura('**/coverage.xml')],
                 sourceFileResolver: sourceFiles('STORE_LAST_BUILD')
 
             archiveArtifacts allowEmptyArchive: true,
