@@ -11,25 +11,31 @@ pipeline {
     stages {
         stage('Requirements') {
             steps {
-                sh 'python3 -m venv .env'
-                sh './.env/bin/pip3 install --upgrade --requirement requirements.txt'
+                dir("${env.WORKSPACE}/05_02-code-coverage-tests-and-reports"){
+                    sh 'python3 -m venv .env'
+                    sh './.env/bin/pip3 install --upgrade --requirement requirements.txt'
+                }
             }
         }
         stage('Lint') {
             steps {
-                sh '.env/bin/flake8 --ignore=E501,E231 *.py'
-                sh '.env/bin/pylint --errors-only --disable=C0301 --disable=C0326 *.py'
+                dir("${env.WORKSPACE}/05_02-code-coverage-tests-and-reports"){
+                    sh '.env/bin/flake8 --ignore=E501,E231 *.py'
+                    sh '.env/bin/pylint --errors-only --disable=C0301 --disable=C0326 *.py'
+                }
             }
         }
         stage('Test') {
             steps {
-                sh '.env/bin/python3 -m unittest --verbose --failfast'
-                sh('''
+                dir("${env.WORKSPACE}/05_02-code-coverage-tests-and-reports"){
+                    sh '.env/bin/python3 -m unittest --verbose --failfast'
+                    sh('''
                         .env/bin/pytest -v test_*.py \
                             --self-contained-html \
                             --html=./reports/pytest_report.html \
                             --junitxml=./reports/pytest_report.xml
-                ''')
+                    ''')
+                }
             }
         }
         stage('Report') {
@@ -40,7 +46,7 @@ pipeline {
     }
     post {
         always {
-
+            echo 'Reporting....'
         }
     }
 }
