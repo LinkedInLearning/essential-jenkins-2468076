@@ -24,7 +24,12 @@ pipeline {
             steps {
                 dir("${env.WORKSPACE}/Ch05/05_02-code-coverage-tests-and-reports"){
                     sh '.env/bin/flake8 --ignore=E501,E231 *.py'
-                    sh '.env/bin/pylint --errors-only --disable=C0301 --disable=C0326 *.py'
+                    sh('''
+                        .env/bin/pylint --errors-only \
+                            --disable=C0301 \
+                            --disable=C0326 \
+                            --output-format=pylint_junit.JUnitReporter *.py > pylint_junit.xml
+                    ''')
                 }
             }
         }
@@ -33,7 +38,7 @@ pipeline {
                 dir("${env.WORKSPACE}/Ch05/05_02-code-coverage-tests-and-reports"){
                     sh('''
                         .env/bin/coverage run -m pytest -v test_*.py \
-                            --junitxml=junit.xml
+                            --junitxml=pytest_junit.xml
                     ''')
                 }
             }
@@ -51,7 +56,8 @@ pipeline {
 
     post {
         always {
-            junit allowEmptyResults: true, testResults: '**/junit.xml'
+            junit allowEmptyResults: true, testResults: '**/pytest_junit.xml'
+            junit allowEmptyResults: true, testResults: '**/pylint_junit.xml'
 
             publishCoverage adapters: [cobertura('**/coverage.xml')],
                 sourceFileResolver: sourceFiles('STORE_LAST_BUILD')
