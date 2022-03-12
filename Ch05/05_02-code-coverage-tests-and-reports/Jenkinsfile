@@ -1,13 +1,16 @@
 pipeline {
     agent any
+
     options {
         buildDiscarder(logRotator(daysToKeepStr: '10', numToKeepStr: '10'))
             timeout(time: 12, unit: 'HOURS')
             timestamps()
     }
+
     triggers {
         cron '@midnight'
     }
+
     stages {
         stage('Requirements') {
             steps {
@@ -36,6 +39,7 @@ pipeline {
                     ''')
                 }
             }
+        }
         stage('Report') {
             steps {
                 dir("${env.WORKSPACE}/Ch05/05_02-code-coverage-tests-and-reports"){
@@ -47,6 +51,7 @@ pipeline {
             }
         }
     }
+
     post {
         always {
             junit allowEmptyResults: true, testResults: '**/pytest_report.xml'
