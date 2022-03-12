@@ -46,7 +46,10 @@ pipeline {
     }
     post {
         always {
-            echo 'Reporting....'
+            archiveArtifacts allowEmptyArchive: true,
+                artifacts: '*.html,*.xml',
+                fingerprint: true,
+                followSymlinks: false
         }
     }
 }
