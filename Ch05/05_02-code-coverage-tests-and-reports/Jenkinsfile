@@ -28,7 +28,6 @@ pipeline {
         stage('Test') {
             steps {
                 dir("${env.WORKSPACE}/Ch05/05_02-code-coverage-tests-and-reports"){
-                    sh '.env/bin/python3 -m unittest --verbose --failfast'
                     sh('''
                         .env/bin/pytest -v test_*.py \
                             --self-contained-html \
@@ -36,11 +35,6 @@ pipeline {
                             --junitxml=./reports/pytest_report.xml
                     ''')
                 }
-            }
-        }
-        stage('Report') {
-            steps {
-                echo 'Reporting....'
             }
         }
     }
