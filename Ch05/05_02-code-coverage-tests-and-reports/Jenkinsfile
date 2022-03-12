@@ -55,7 +55,10 @@ pipeline {
     post {
         always {
             junit allowEmptyResults: true, testResults: '**/pytest_report.xml'
-            junit allowEmptyResults: true, testResults: '**/coverage.xml'
+
+            publishCoverage adapters: [jacocoAdapter('coverage.xml')],
+                sourceFileResolver: sourceFiles('STORE_LAST_BUILD')
+
             archiveArtifacts allowEmptyArchive: true,
                 artifacts: '**/pytest_report.*',
                 fingerprint: true,
