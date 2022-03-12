@@ -32,7 +32,7 @@ pipeline {
             steps {
                 dir("${env.WORKSPACE}/Ch05/05_02-code-coverage-tests-and-reports"){
                     sh('''
-                        .env/bin/coverage -m pytest -v test_*.py \
+                        .env/bin/coverage run -m pytest -v test_*.py \
                             --self-contained-html \
                             --html=./reports/pytest_report.html \
                             --junitxml=./reports/pytest_report.xml
