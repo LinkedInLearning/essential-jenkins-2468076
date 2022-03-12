@@ -1,0 +1,46 @@
+pipeline {
+    agent any
+        options {
+            buildDiscarder(logRotator(daysToKeepStr: '10', numToKeepStr: '10'))
+                timeout(time: 12, unit: 'HOURS')
+                timestamps()
+        }
+    triggers {
+        cron '@midnight'
+    }
+    stages {
+        stage('Requirements') {
+            steps {
+                sh 'python3 -m venv .env'
+                sh './.env/bin/pip3 install --upgrade --requirement requirements.txt'
+            }
+        }
+        stage('Lint') {
+            steps {
+                sh '.env/bin/flake8 --ignore=E501,E231 *.py'
+                sh '.env/bin/pylint --errors-only --disable=C0301 --disable=C0326 *.py'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh '.env/bin/python3 -m unittest --verbose --failfast'
+                sh('''
+                        .env/bin/pytest -v test_*.py \
+                            --self-contained-html \
+                            --html=./reports/pytest_report.html \
+                            --junitxml=./reports/pytest_report.xml
+                ''')
+            }
+        }
+        stage('Report') {
+            steps {
+                echo 'Reporting....'
+            }
+        }
+    }
+    post {
+        always {
+
+        }
+    }
+}
