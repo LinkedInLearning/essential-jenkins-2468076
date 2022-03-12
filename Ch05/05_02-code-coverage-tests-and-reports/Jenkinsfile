@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Requirements') {
             steps {
-                dir("${env.WORKSPACE}/05_02-code-coverage-tests-and-reports"){
+                dir("${env.WORKSPACE}/Ch05/05_02-code-coverage-tests-and-reports"){
                     sh 'python3 -m venv .env'
                     sh './.env/bin/pip3 install --upgrade --requirement requirements.txt'
                 }
@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Lint') {
             steps {
-                dir("${env.WORKSPACE}/05_02-code-coverage-tests-and-reports"){
+                dir("${env.WORKSPACE}/Ch05/05_02-code-coverage-tests-and-reports"){
                     sh '.env/bin/flake8 --ignore=E501,E231 *.py'
                     sh '.env/bin/pylint --errors-only --disable=C0301 --disable=C0326 *.py'
                 }
@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                dir("${env.WORKSPACE}/05_02-code-coverage-tests-and-reports"){
+                dir("${env.WORKSPACE}/Ch05/05_02-code-coverage-tests-and-reports"){
                     sh '.env/bin/python3 -m unittest --verbose --failfast'
                     sh('''
                         .env/bin/pytest -v test_*.py \
