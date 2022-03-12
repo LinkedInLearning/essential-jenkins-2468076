@@ -46,9 +46,9 @@ pipeline {
     }
     post {
         always {
-            junit allowEmptyResults: true, testResults: '**/*.xml'
+            junit allowEmptyResults: true, testResults: '**/pytest_report.xml'
             archiveArtifacts allowEmptyArchive: true,
-                artifacts: '**/*.html,**/*.xml',
+                artifacts: '**/pytest_report.*',
                 fingerprint: true,
                 followSymlinks: false
         }
