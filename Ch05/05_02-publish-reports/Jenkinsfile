@@ -52,7 +52,9 @@ pipeline {
 
     post {
         always {
-            sh 'venv/bin/coverage xml'
+            dir("${env.WORKSPACE}/Ch05/05_02-publish-reports"){
+                sh 'venv/bin/coverage xml'
+            }
 
             junit allowEmptyResults: true, testResults: '**/pytest_junit.xml'
 
