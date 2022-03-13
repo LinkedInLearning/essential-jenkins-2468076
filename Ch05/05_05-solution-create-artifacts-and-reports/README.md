@@ -5,7 +5,7 @@ You've been assigned to develop a Jenkins pipeline that tests the application co
 
 If the tests pass, the pipeline should compile the code into a Java archive and store the JAR file as an artifact.
 
-## Requirements
+## Solution
 - Set up a global tool configuration for Maven.
     - Select `Manage Jenkins` &rarr; `Global tool configuration` &rarr; `Add Maven`
     - Name Maven `Maven-3.8.4`
