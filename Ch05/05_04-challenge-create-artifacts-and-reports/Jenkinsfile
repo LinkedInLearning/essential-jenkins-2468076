@@ -2,6 +2,15 @@ pipeline {
     agent any
     // Add a tool configuration here...
     stages {
+        stage('Source') {
+            steps {
+                git branch: 'main',
+                    changelog: false,
+                    credentialsId: 'managedkaos', // TODO: Remove the credentials
+                    poll: false,
+                    url: 'https://github.com/LinkedInLearning/essential-jenkins-2468076.git'
+            }
+        }
         stage('Clean') {
             steps {
                 dir("${env.WORKSPACE}/Ch05/05_04-challenge-create-artifacts-and-reports"){
@@ -18,11 +27,11 @@ pipeline {
                 }
             }
         }
-        stage('Install') {
+        stage('Package') {
             steps {
                 dir("${env.WORKSPACE}/Ch05/05_04-challenge-create-artifacts-and-reports"){
                     echo "Creating the JAR file..."
-                    // Add the maven install command here...
+                    // Add the maven package command here...
                 }
             }
         }
