@@ -19,14 +19,30 @@ Jenkins uses plugins to read and publish a variety of test and code coverage rep
 - [Code Coverage API](https://plugins.jenkins.io/code-coverage-api/)
 
 ## Test report and code coverage demo with a Python project
-The code in this directory includes a Python project for a simple API.  The code inlucdes a Jenkinsfile for a pipeline with the following steps:
+The code in this directory includes a Python project for a simple API.  The code inlucdes a [Jenkinsfile](./Jenkinsfile) for a pipeline with the following steps:
 
-- [Jenkinsfile](./Jenkinsfile)
-- Requirements: Sets up a virtual environment and installs dependencies
-- Lint: Checks the code for syntax errors
-- Test: Runs a test suite including code coverage
-- Build: Builds the application
-- Deploy: Deploys the application
+|Pipeline stage |Function                                               |
+|:--------------|:------------------------------------------------------| 
+|Requirements   |Sets up a virtual environment and installs dependencies|
+|Lint           |Checks the code for syntax errors                      |
+|Test           |Runs a test suite including code coverage              |
+|Build          |Builds the application                                 |
+|Deploy         |Deploys the application                                |
+
+```mermaid
+sequenceDiagram
+    participant Requirements
+    participant Lint
+    participant Test
+    participant Build
+    participant Deploy
+    participant End
+    Requirements->>Lint: Install dependencies
+    Lint->>Test: Checks the code for syntax errors
+    Test->>Build: Runs a test suite including code coverage
+    Build->>Deploy: Builds the application
+    Deploy->>End: Deploys the application
+```
 
 *If you're following along with the exercise files for this lesson, there are a few things that you'll need to know in advance.*
 
