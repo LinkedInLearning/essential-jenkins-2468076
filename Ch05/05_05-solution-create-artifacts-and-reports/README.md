@@ -19,7 +19,7 @@ If the tests pass, the pipeline should compile the code into a Java archive and 
     - Confirm "JUnit Plugin" is installed
   
 - Update the pipeline to use the Maven tool configuration.
-    - Select `Dashboard` &rarr; `New Item` &rarr;
+    - Select `Dashboard` &rarr; `New Item`
     - Enter item name
     - Select `Pipeline` project
     - `OK`
