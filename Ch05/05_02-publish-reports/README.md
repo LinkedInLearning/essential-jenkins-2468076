@@ -43,7 +43,18 @@ sequenceDiagram
     Build->>Deploy: Builds the application
     Deploy->>End: Deploys the application
 ```
-
+```mermaid
+sequenceDiagram
+    participant dotcom
+    participant iframe
+    participant viewscreen
+    dotcom->>iframe: loads html w/ iframe url
+    iframe->>viewscreen: request template
+    viewscreen->>iframe: html & javascript
+    iframe->>dotcom: iframe ready
+    dotcom->>iframe: set mermaid data on iframe
+    iframe->>iframe: render mermaid
+```
 *If you're following along with the exercise files for this lesson, there are a few things that you'll need to know in advance.*
 
 - [ ] The Jenkinsfile is written to be run on a Ubuntu server.
