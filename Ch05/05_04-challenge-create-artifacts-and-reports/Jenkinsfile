@@ -6,7 +6,7 @@ pipeline {
             steps {
                 git branch: 'main',
                     changelog: false,
-                    credentialsId: 'managedkaos', // TODO: Remove the credentials
+                    credentialsId: 'managedkaos', // You won't need credentials :D
                     poll: false,
                     url: 'https://github.com/LinkedInLearning/essential-jenkins-2468076.git'
             }

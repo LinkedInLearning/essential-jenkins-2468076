@@ -7,20 +7,7 @@ pipeline {
         timestamps()
     }
 
-    triggers {
-        cron '@midnight'
-    }
-
     stages {
-        stage('Source') {
-            steps {
-                git branch: 'main',
-                    changelog: false,
-                    credentialsId: 'managedkaos', // TODO: Remove the credentials
-                    poll: false,
-                    url: 'https://github.com/LinkedInLearning/essential-jenkins-2468076.git'
-            }
-        }
         stage('Requirements') {
             steps {
                 dir("${env.WORKSPACE}/Ch05/05_02-publish-reports"){

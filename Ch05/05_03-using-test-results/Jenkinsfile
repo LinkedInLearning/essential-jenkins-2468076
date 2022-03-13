@@ -7,10 +7,6 @@ pipeline {
         timestamps()
     }
 
-    triggers {
-        cron '@midnight'
-    }
-
     stages {
         stage('Requirements') {
             steps {
