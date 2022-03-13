@@ -38,23 +38,14 @@ sequenceDiagram
     participant Deploy
     participant End
     Requirements->>Lint: Install dependencies
-    Lint->>Test: Checks the code for syntax errors
-    Test->>Build: Runs a test suite including code coverage
-    Build->>Deploy: Builds the application
-    Deploy->>End: Deploys the application
+    Lint->>Test: Check the code for syntax errors
+    Test->>Build: Run tests
+    Test->>Build: Generate test reports
+    Test->>Build: Generate code coverage reports
+    Build->>Deploy: Build the application
+    Deploy->>End: Deploy the application
 ```
-```mermaid
-sequenceDiagram
-    participant dotcom
-    participant iframe
-    participant viewscreen
-    dotcom->>iframe: loads html w/ iframe url
-    iframe->>viewscreen: request template
-    viewscreen->>iframe: html & javascript
-    iframe->>dotcom: iframe ready
-    dotcom->>iframe: set mermaid data on iframe
-    iframe->>iframe: render mermaid
-```
+
 *If you're following along with the exercise files for this lesson, there are a few things that you'll need to know in advance.*
 
 - [ ] The Jenkinsfile is written to be run on a Ubuntu server.
