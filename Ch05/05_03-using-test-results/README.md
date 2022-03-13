@@ -15,13 +15,4 @@ This will allow the project pipeline to run and encounter an error in the Test s
 
 When Jenkins observes the failure in the Test stage, the Build and Deploy stages will be skipped.
 
-```mermaid
-flowchart LR
-    Requirements-->Lint
-    Lint-->Test Failure
-    Test Failure-->Build Skipped
-    Build Skipped-->Deploy Skipped
-```
-
-
 *For more details on the requirements for running this project, please review [05_02 Publish test results and code coverage reports](../05_02-publish-reports/README.md).*
