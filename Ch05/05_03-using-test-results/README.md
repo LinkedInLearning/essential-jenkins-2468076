@@ -19,8 +19,8 @@ When Jenkins observes the failure in the Test stage, the Build and Deploy stages
 flowchart LR
     Requirements-->Lint
     Lint-->Test Failure
-    Test Failure---Build Skipped
-    Build Skipped---Deploy Skipped
+    Test Failure-->Build Skipped
+    Build Skipped-->Deploy Skipped
 ```
 
 
