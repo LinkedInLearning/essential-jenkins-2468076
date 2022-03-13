@@ -12,13 +12,13 @@ Two popular code coverage formats are JaCoCo and Cobertura.
 - [JaCoCo](https://www.jacoco.org/jacoco/)
 - [Cobertura](http://cobertura.github.io/cobertura/)
 
-# Plugins for reading and publishing reports
+## Plugins for reading and publishing reports
 Jenkins uses plugins to read and publish a variety of test and code coverage reports.
 
 - [JUnit](https://plugins.jenkins.io/junit/)
 - [Code Coverage API](https://plugins.jenkins.io/code-coverage-api/)
 
-# Test report and code coverage demo with a Python project
+## Test report and code coverage demo with a Python project
 The code in this directory includes a Python project for a simple API.  The code inlucdes a Jenkinsfile for a pipeline with the following steps:
 
 - [Jenkinsfile](./Jenkinsfile)
