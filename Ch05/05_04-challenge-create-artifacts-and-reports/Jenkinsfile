@@ -1,40 +1,39 @@
 pipeline {
     agent any
-    tools {
-      maven 'Maven-3.8.4'
-    }
+    // Add a tool configuration here...
     stages {
         stage('Clean') {
             steps {
                 dir("${env.WORKSPACE}/Ch05/05_04-challenge-create-artifacts-and-reports"){
-                    sh 'mvn clean'
+                    echo "Cleaning the workspace..."
+                    // Add the maven clean command here...
                 }
             }
         }
         stage('Test') {
             steps {
                 dir("${env.WORKSPACE}/Ch05/05_04-challenge-create-artifacts-and-reports"){
-                    sh 'mvn test'
+                    echo "Running tests..."
+                    // Add the maven test command here...
                 }
             }
         }
         stage('Install') {
             steps {
                 dir("${env.WORKSPACE}/Ch05/05_04-challenge-create-artifacts-and-reports"){
-                    sh 'mvn install -DskipTests'
+                    echo "Creating the JAR file..."
+                    // Add the maven install command here...
                 }
             }
         }
     }
     post {
         always {
-            junit allowEmptyResults: true, testResults: '**/TEST-com.learningjenkins.AppTest.xml'
+            echo "Collecting jUnit test results..."
+            // Add jUnit report collection here...
 
-            archiveArtifacts allowEmptyArchive: true,
-                artifacts: '**/hello-1.0-SNAPSHOT.jar',
-                fingerprint: true,
-                followSymlinks: false,
-                onlyIfSuccessful: true
+            echo "Archiving the JAR file..."
+            // Add artifact archiving here...
         }
     }
 
