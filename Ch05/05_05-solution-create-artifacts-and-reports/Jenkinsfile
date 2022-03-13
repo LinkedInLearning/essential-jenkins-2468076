@@ -1,0 +1,41 @@
+pipeline {
+    agent any
+    tools {
+      maven 'Maven-3.8.4'
+    }
+    stages {
+        stage('Clean') {
+            steps {
+                dir("${env.WORKSPACE}/Ch05/05_04-challenge-create-artifacts-and-reports"){
+                    sh 'mvn clean'
+                }
+            }
+        }
+        stage('Test') {
+            steps {
+                dir("${env.WORKSPACE}/Ch05/05_04-challenge-create-artifacts-and-reports"){
+                    sh 'mvn test'
+                }
+            }
+        }
+        stage('Install') {
+            steps {
+                dir("${env.WORKSPACE}/Ch05/05_04-challenge-create-artifacts-and-reports"){
+                    sh 'mvn install -DskipTests'
+                }
+            }
+        }
+    }
+    post {
+        always {
+            junit allowEmptyResults: true, testResults: '**/TEST-com.learningjenkins.AppTest.xml'
+
+            archiveArtifacts allowEmptyArchive: true,
+                artifacts: '**/hello-1.0-SNAPSHOT.jar',
+                fingerprint: true,
+                followSymlinks: false,
+                onlyIfSuccessful: true
+        }
+    }
+
+}
