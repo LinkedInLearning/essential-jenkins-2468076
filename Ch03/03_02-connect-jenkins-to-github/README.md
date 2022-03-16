@@ -13,7 +13,8 @@ Follow this link to [create a new repo on GitHub: https://github.new](https://gi
 Follow these steps to connect Jenkins to GitHub.
 
 - Create a new repo on GitHub.com and include a README.md file during the creattion process.
-  - Click `Add a file` -> `Create new file`
+  - Click `Add a file` -> `Create new file`.
+  - Name the file `Jenkinsfile`.
   - Copy the contents of the [`Jenkinsfile` for this lesson](Jenkinsfile) and paste into the file in the new repo.
   - Select `Commit directly to the main branch.`
   - Select `Commit new file`.
@@ -26,7 +27,7 @@ Follow these steps to connect Jenkins to GitHub.
     - Enter item name (use the same name as your repo if possible)
     - Select `Pipeline` project
     - `OK`
-    - Select `GitHub Project` and paste in the repo URL. 
+    - Select `GitHub Project` and paste in the repo URL.
       - *NOTE: This step is optional.  It only creates a link to the repo on the project home page.*
     - Under `Pipeline`, select `Pipeline script from SCM`.
     - Under SCM, seclect `Git`.
