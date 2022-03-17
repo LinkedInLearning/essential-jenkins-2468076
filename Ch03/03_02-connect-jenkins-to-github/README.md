@@ -29,6 +29,7 @@ Follow these steps to connect Jenkins to GitHub.
     - `OK`
     - Select `GitHub Project` and paste in the repo URL.
       - *NOTE: This step is optional.  It only creates a link to the repo on the project home page.*
+    - Under `Build Triggers`, select the checkbox next to `GitHub hook trigger for GITScm polling`.
     - Under `Pipeline`, select `Pipeline script from SCM`.
     - Under SCM, seclect `Git`.
     - Under `Repository URL`, paste in the repo URL.
