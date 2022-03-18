@@ -12,7 +12,7 @@ Follow this link to [create a new repo on GitHub: https://github.new](https://gi
 
 Follow these steps to connect Jenkins to GitHub.
 
-- Create a new repo on GitHub.com and include a README.md file during the creattion process.
+- Create a new repo on GitHub.com and include a README.md file during the creation process.
   - Click `Add a file` -> `Create new file`.
   - Name the file `Jenkinsfile`.
   - Copy the contents of the [`Jenkinsfile` for this lesson](Jenkinsfile) and paste into the file in the new repo.
@@ -42,7 +42,7 @@ Follow these steps to connect Jenkins to GitHub.
   - Select `Settings` &rarr; `Webhooks` &rarr; `Add webhook`.
   - Under `Payload URL`, paste in the URL for your Jenkins server.
   - Immediately after the Jenkins server URL, add `/github-webhook/`.
-  - *NOTE: Please be sure to include the trailing slash on `github-webhook/`.  The field should be in a format similar to `http://jenkins_url/github-webhook/`.*
+  - *NOTE: Please be sure to include the trailing slash on `github-webhook/`.  The field should be in a format similar to `http://your-jenkins-server.com/github-webhook/`.*
   - Under `Content type`, select `application/json`.
   - `Add webhook`
   - *NOTE: GitHub will ping the Jenkins server and indicate a successful connection with a green checkmark next to the webhook name.  If your webhook does not indicate that it connected successfully, select `Edit` and confirm your settings again.  If needed, delete the webhook and start over.*
