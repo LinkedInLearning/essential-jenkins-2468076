@@ -15,7 +15,7 @@ Follow these steps to connect Jenkins to GitHub.
 - Create a new repo on GitHub.com and include a README.md file during the creation process.
   - Click `Add a file` -> `Create new file`.
   - Name the file `Jenkinsfile`.
-  - Copy the contents of the [`Jenkinsfile` for this lesson](Jenkinsfile) and paste into the file in the new repo.
+  - Copy the contents of the [`Jenkinsfile` for this lesson](./Jenkinsfile) and paste into the file in the new repo.
   - Select `Commit directly to the main branch.`
   - Select `Commit new file`.
   - Select the `Code` button.
