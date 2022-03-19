@@ -1,6 +1,6 @@
 # 03_02 Connect Jenkins to GitHub
 
-Jenkins can retrieve pipeline configurations from version control systems like GitHub.  In turn, Github can connect send webhooks to Jenkins that trigger jobs when a change is pushed to a repo.
+Jenkins can retrieve pipeline configurations from version control systems like GitHub.  In turn, GitHub can connect send webhooks to Jenkins that trigger jobs when a change is pushed to a repo.
 
 To demonstrate connecting Jenkins and GitHub, the following need to be in place:
 - A Jenkins server that is publicly accessible on the internet
@@ -31,7 +31,7 @@ Follow these steps to connect Jenkins to GitHub.
       - *NOTE: This step is optional.  It only creates a link to the repo on the project home page.*
     - Under `Build Triggers`, select the checkbox next to `GitHub hook trigger for GITScm polling`.
     - Under `Pipeline`, select `Pipeline script from SCM`.
-    - Under SCM, seclect `Git`.
+    - Under SCM, select `Git`.
     - Under `Repository URL`, paste in the repo URL.
     - Under `Branch Specifier (blank for 'any')`, change `master` to `main`.
     - `Save` &rarr; `Build Now`.
@@ -52,4 +52,4 @@ Follow these steps to connect Jenkins to GitHub.
     - Make a change to the file.
     - Click `Commit changes`.
   - Go to the Jenkins server and observe the job being triggered by the change you just made in GitHub.
-  - *NOTE: If your job is not triggered, review the configuration for the Jenkinsjob and the GitHub repo, making any adjustments as needed.  If needed, start again with a new job in Jenkins or with a new webhook in GitHub.*
+  - *NOTE: If your job is not triggered, review the configuration for the Jenkins job and the GitHub repo, making any adjustments as needed.  If needed, start again with a new job in Jenkins or with a new webhook in GitHub.*

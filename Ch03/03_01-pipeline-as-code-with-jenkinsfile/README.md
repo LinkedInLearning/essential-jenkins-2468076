@@ -4,7 +4,7 @@ The `Jenkinsfile` format is used to capture pipeline definition as code.
 
 The file is text and can be stored and tracked in a version control system with other project files.
 
-`Jenkinsfile` can also be used to define project configuration inluding tools, options, and triggers.
+`Jenkinsfile` can also be used to define project configuration including tools, options, and triggers.
 
 Storing the Jenkinsfile in repo also allows development teams to use a GitOps approach to development. 
 
@@ -20,7 +20,7 @@ Storing the Jenkinsfile in repo also allows development teams to use a GitOps ap
 - Observe the two stages in the pipeline:
   - *Declarative: Checkout SCM*
   - *Hello! Please read the logs.*
-- View the ouptut from the *Hello! Please read the logs.* stage.
+- View the output from the *Hello! Please read the logs.* stage.
 
 Follow this link to view the [Jenkinsfile in the root of this repo](../../Jenkinsfile).
 

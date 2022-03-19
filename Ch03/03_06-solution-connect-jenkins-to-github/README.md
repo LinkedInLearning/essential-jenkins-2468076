@@ -13,7 +13,7 @@ They also want to display the status of that most recent test directly in the re
   - [ ] [Jenkinsfile](./Jenkinsfile)
   - [ ] [algorithm.sh](./algorithm.sh)
 - [ ] Create a new pipeline project that pulls the code from the repo and uses the Jenkinsfile for the project definition.
-- [ ] Install the embeddable status plug-in and update the GitHub repo to show the status of the project.
+- [ ] Install the Embeddable status plug-in and update the GitHub repo to show the status of the project.
 
 _*This challenge should take about 15 to 20 minutes to complete.*_
 

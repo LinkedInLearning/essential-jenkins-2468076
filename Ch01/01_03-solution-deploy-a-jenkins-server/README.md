@@ -29,10 +29,10 @@ However, You can still follow along with Jenkins installed on your local system.
 
 
 ## The Solution uses Amazon Web Services
-The solution demonstrated in the courseI uses the Amazon web services public Cloud platform. Prequisites to the solution include:
+The solution demonstrated in the course uses the Amazon web services public Cloud platform. Prerequisites to the solution include:
 
 - Create a key pair for SSH connections
-- Create an ec2 instance using a Ubuntu AMI
+- Create an EC2 instance using a Ubuntu AMI
 - Create an elastic IP for persistent DNS assignment
 
 ## Exercise files are available for this challenge.

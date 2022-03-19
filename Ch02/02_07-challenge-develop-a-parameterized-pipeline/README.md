@@ -22,7 +22,7 @@ There are three stages in the pipeline: `Test`, `Deploy`, and `Report`.
 - [ ] Update the `Report` stage to use the environment as the name of the report file. 
 
 ## Tips
-- Use the *Declarative Directive Generator* in the Pipeline Sytanx tool to create snippets for the parameters and any other directives if needed.
+- Use the *Declarative Directive Generator* in the Pipeline Syntax tool to create snippets for the parameters and any other directives if needed.
 
 - Start a new pipeline project and use the following code:
 ```Jenkinsfile

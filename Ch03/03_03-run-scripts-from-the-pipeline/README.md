@@ -15,7 +15,7 @@ sh(‘./scripts/build.sh’)
 bat(‘..\scripts\build.bat’)
 ```
 
-Absolute paths can be used to refernce files in the workspace or in other locations on the sytems where the job is being run.
+Absolute paths can be used to reference files in the workspace or in other locations on the systems where the job is being run.
 ```
 sh(‘/usr/local/bin/build.sh’)
 bat(‘C:\bin\build.bat’)
@@ -47,7 +47,7 @@ The exercise files for this lesson include a [Jenkinsfile](./Jenkinsfile) and a 
       - *NOTE: This step is optional.  It only creates a link to the repo on the project home page.*
     - Under `Build Triggers`, select the checkbox next to `GitHub hook trigger for GITScm polling`.
     - Under `Pipeline`, select `Pipeline script from SCM`.
-    - Under SCM, seclect `Git`.
+    - Under SCM, select `Git`.
     - Under `Repository URL`, paste in the repo URL.
     - Under `Branch Specifier (blank for 'any')`, change `master` to `main`.
     - `Save` &rarr; `Build Now`.
@@ -68,4 +68,4 @@ The exercise files for this lesson include a [Jenkinsfile](./Jenkinsfile) and a 
     - Make a change to the file.
     - Click `Commit changes`.
   - Go to the Jenkins server and observe the job being triggered by the change you just made in GitHub.
-  - *NOTE: If your job is not triggered, review the configuration for the Jenkinsjob and the GitHub repo, making any adjustments as needed.  If needed, start again with a new job in Jenkins or with a new webhook in GitHub.*
+  - *NOTE: If your job is not triggered, review the configuration for the Jenkins job and the GitHub repo, making any adjustments as needed.  If needed, start again with a new job in Jenkins or with a new webhook in GitHub.*

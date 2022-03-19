@@ -1,4 +1,4 @@
-# 06_01 Secure Jenkins with user acccounts
+# 06_01 Secure Jenkins with user accounts
 Jenkins provides some security features by default.  For example, new installations are locked and require an initial admin password.
 
 Jenkins also allows you to create user accounts with usernames and passwords.  This is a common approach for setting up boundaries for who can log in.
@@ -25,7 +25,7 @@ When setting up Matrix-based security, please be sure to give your user administ
 
 _*If you do not assign admin permissions to your account or an admin account, you run the risk of locking yourself out of your Jenkins server.*_
 
-See the resources for more inforation.
+See the resources for more information.
 
 ## Resources
 View the following documents for more information on security configurations in Jenkins.

@@ -19,7 +19,7 @@ Jenkins uses plugins to read and publish a variety of test and code coverage rep
 - [Code Coverage API](https://plugins.jenkins.io/code-coverage-api/)
 
 ## Test report and code coverage demo with a Python project
-The code in this directory includes a Python project for a simple API.  The code inlucdes a [Jenkinsfile](./Jenkinsfile) for a pipeline with the following stages:
+The code in this directory includes a Python project for a simple API.  The code includes a [Jenkinsfile](./Jenkinsfile) for a pipeline with the following stages:
 
 ```mermaid
 flowchart LR

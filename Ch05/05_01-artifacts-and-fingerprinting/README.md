@@ -69,4 +69,4 @@ pipeline {
 }
 ```
 
-Run the `create-artifact` job and then run the `read-artifact` job.  Review the ouput of one of the builds from `create-artifact` to see the artifact fingerprints.
+Run the `create-artifact` job and then run the `read-artifact` job.  Review the output of one of the builds from `create-artifact` to see the artifact fingerprints.
