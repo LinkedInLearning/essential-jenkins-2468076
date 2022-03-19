@@ -152,3 +152,4 @@ dmypy.json
 cython_debug/
 
 *.code-workspace
+*.bak

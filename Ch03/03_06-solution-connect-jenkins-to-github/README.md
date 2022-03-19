@@ -37,7 +37,7 @@ _*This challenge should take about 15 to 20 minutes to complete.*_
       - *NOTE: This step is optional.  It only creates a link to the repo on the project home page.*
     - Under `Build Triggers`, select the checkbox next to `GitHub hook trigger for GITScm polling`.
     - Under `Pipeline`, select `Pipeline script from SCM`.
-    - Under SCM, seclect `Git`.
+    - Under SCM, select `Git`.
     - Under `Repository URL`, paste in the repo URL.
     - Under `Branch Specifier (blank for 'any')`, change `master` to `main`.
     - `Save` &rarr; `Build Now`.
@@ -52,14 +52,14 @@ _*This challenge should take about 15 to 20 minutes to complete.*_
   - *NOTE: Please be sure to include the trailing slash on `github-webhook/`.  The field should be in a format similar to `http://your-jenkins-server.com/github-webhook/`.*
   - Under `Content type`, select `application/json`.
   - `Add webhook`
-  - *NOTE: GitHub will ping the Jenkins server and indicate a successful connection with a green checkmark next to the webhook name.  If your webhook does not indicate that it connected successfully, select `Edit` and confirm your settings again.  If needed, delete the webhook and start over.*
+  - *NOTE: GitHub will ping the Jenkins server and indicate a successful connection with a green check-mark next to the webhook name.  If your webhook does not indicate that it connected successfully, select `Edit` and confirm your settings again.  If needed, delete the webhook and start over.*
   - Select the `<>Code` tab.
   - Edit the `algorithm.sh` file.
     - Click the pencil icon.
     - Add and remove commented lines as instructed by the directions in the script.
     - Click `Commit changes`.
   - Go to the Jenkins server and observe the job being triggered by the change you just made in GitHub.
-  - *NOTE: If your job is not triggered, review the configuration for the Jenkinsjob and the GitHub repo, making any adjustments as needed.  If needed, start again with a new job in Jenkins or with a new webhook in GitHub.*
+  - *NOTE: If your job is not triggered, review the configuration for the Jenkins job and the GitHub repo, making any adjustments as needed.  If needed, start again with a new job in Jenkins or with a new webhook in GitHub.*
   - Review the contents of the `report.txt` artifact.
 
 - Add the build status badge to a GitHub repo's README file.
@@ -72,7 +72,7 @@ _*This challenge should take about 15 to 20 minutes to complete.*_
   - Commit the file.
   - Confirm that the status badge appears in the file.
 
-## Solution summaruy
+## Solution summary
 To successfully complete this challenge you will have:
 - Created a GitHub repo and connected it to a pipeline job on your Jenkins server
 - Configured the repo to trigger a pipeline build when changes are pushed to the repo
