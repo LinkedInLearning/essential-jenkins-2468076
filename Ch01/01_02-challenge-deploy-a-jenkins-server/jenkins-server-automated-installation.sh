@@ -8,7 +8,7 @@ echo "# $(date) Installation is starting."
 # Output from the installation will be written to /var/log/user-data.log
 #exec > >(tee /var/log/user-data.log|logger -t user-data -s 2>/dev/console) 2>&1
 
-echo "# $(date) Instatll jenkins key and package configuration..."
+echo "# $(date) Install jenkins key and package configuration..."
 curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | tee \
     /usr/share/keyrings/jenkins-keyring.asc > /dev/null
 
