@@ -29,7 +29,7 @@ If the tests pass, the pipeline should compile the code into a Java archive and 
 - This challenge should take about 15 to 20 minutes to complete.
 
 ## The pipeline template
-[Follow this link for the Jenkinsfile template](./Jenkinsfile) or copy it from the code below:
+[Follow this link for the Jenkinsfile template](./Jenkinsfile) or view it below:
 
 ```Jenkinsfile
 pipeline {
