@@ -10,7 +10,7 @@ They've asked you to demonstrate how they can secure their pipeline jobs by limi
 - Create users and configure security
     - Create two users: one named `engineering` and another named `finance`
     - Change the security configuration on your Jenkins server to use a project-based authorization strategy
-    - Assign the "Overal read" permission to both users
+    - Assign the "Overall read" permission to both users
 - Demonstrate limited access
     - Create two folders: one named `Engineering-Jobs` and another named `Finance-Jobs`.
     - Assign admin permissions to both users in the folder that corresponds to the user name.
@@ -80,6 +80,6 @@ Builds in Jenkins run as the virtual Jenkins SYSTEM user with full Jenkins permi
   - Log out of the admin account.
   - Log in as the `engineering` user.
   - Confirm that the engineering user is not able to access the `Finance-Jobs` folder.
-  - Log out of the engieering account.
+  - Log out of the engineering account.
   - Log in as the `finance` user.
   - Confirm that the finance user is not able to access the `Engineering-Jobs` folder.
