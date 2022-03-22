@@ -39,12 +39,10 @@ This challenge should take 10 to 15 minutes to complete.
   - Select the `Overall Read` permission for the engineering and finance users.
   - Select `Save`.
   - You may be prompted with the following message:
-```
-Builds in Jenkins run as the virtual Jenkins SYSTEM user with full Jenkins permissions by default. This can be a problem if some users have restricted or no access to some jobs, but can configure others. If that is the case, it is recommended to install a plugin implementing build authentication, and to override this default.
-```
-  - Review the following document for more information [Access Control for Builds 
+    - _*Builds in Jenkins run as the virtual Jenkins SYSTEM user with full Jenkins permissions by default. This can be a problem if some users have restricted or no access to some jobs, but can configure others. If that is the case, it is recommended to install a plugin implementing build authentication, and to override this default.*_
+    - Review the following document for more information [Access Control for Builds
   ](https://www.jenkins.io/doc/book/security/build-authorization/)
-  - Select `Dismiss` to proceed.
+    - Select `Dismiss` to proceed.
 
 - Create a folder with limited access for the Engineering team
   - Select `Dashboard` &arr; `New Item`.
