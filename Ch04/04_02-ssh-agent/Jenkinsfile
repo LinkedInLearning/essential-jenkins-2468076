@@ -12,21 +12,21 @@ pipeline {
         }
         stage('Clean') {
             steps {
-                dir("${env.WORKSPACE}/Ch04/04_02-challenge-create-artifacts-and-reports"){
+                dir("${env.WORKSPACE}/Ch04/04_02-ssh-agent"){
                     sh 'mvn clean'
                 }
             }
         }
         stage('Test') {
             steps {
-                dir("${env.WORKSPACE}/Ch04/04_02-challenge-create-artifacts-and-reports"){
+                dir("${env.WORKSPACE}/Ch04/04_02-ssh-agent"){
                     sh 'mvn test'
                 }
             }
         }
         stage('Package') {
             steps {
-                dir("${env.WORKSPACE}/Ch04/04_02-challenge-create-artifacts-and-reports"){
+                dir("${env.WORKSPACE}/Ch04/04_02-ssh-agent"){
                     sh 'mvn package -DskipTests'
                 }
             }
