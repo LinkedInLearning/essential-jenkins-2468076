@@ -1,0 +1,35 @@
+pipeline {
+    agent { label 'linux' }
+    tools {
+      maven 'Maven-3.8.4'
+    }
+    stages {
+        stage('Source') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/LinkedInLearning/essential-jenkins-2468076.git'
+            }
+        }
+        stage('Clean') {
+            steps {
+                dir("${env.WORKSPACE}/Ch04/04_02-challenge-create-artifacts-and-reports"){
+                    sh 'mvn clean'
+                }
+            }
+        }
+        stage('Test') {
+            steps {
+                dir("${env.WORKSPACE}/Ch04/04_02-challenge-create-artifacts-and-reports"){
+                    sh 'mvn test'
+                }
+            }
+        }
+        stage('Package') {
+            steps {
+                dir("${env.WORKSPACE}/Ch04/04_02-challenge-create-artifacts-and-reports"){
+                    sh 'mvn package -DskipTests'
+                }
+            }
+        }
+    }
+}
