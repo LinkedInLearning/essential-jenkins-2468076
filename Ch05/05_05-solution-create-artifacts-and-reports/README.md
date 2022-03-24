@@ -17,7 +17,7 @@ If the tests pass, the pipeline should compile the code into a Java archive and 
     - Select `Dashboard` &rarr; `Manage Jenkins` &rarr; `Manage Plugins` &rarr; `Installed`
     - Filter for "junit"
     - Confirm "JUnit Plugin" is installed
-  
+
 - Update the pipeline to use the Maven tool configuration.
     - Select `Dashboard` &rarr; `New Item`
     - Enter item name
@@ -36,11 +36,11 @@ If the tests pass, the pipeline should compile the code into a Java archive and 
     - Select `Configure`
     - Uncomment calls to Maven
     - `Save` &rarr; `Build Now`
-  
+
 - Collect test results from the following location: `**/TEST-com.learningjenkins.AppTest.xml`.
     - Select `Configure`
     - Go to pipeline syntax tool tab
-    - Select `Snippet Generator` &rarr; `junit: Archive...` &rarr; 
+    - Select `Snippet Generator` &rarr; `junit: Archive...` &rarr;
       - Test report XMLs = `**/TEST-com.learningjenkins.AppTest.xml`
       - Select `Do not fail the build on empty test results`
       - `Generate Pipeline Script`
@@ -50,7 +50,7 @@ If the tests pass, the pipeline should compile the code into a Java archive and 
 
 - Archive artifacts from the following location: `**/hello-1.0-SNAPSHOT.jar`.
     - Go to pipeline syntax tool tab
-    - Select `Snippet Generator` &rarr; `archiveArtifacts: Archive...` &rarr; 
+    - Select `Snippet Generator` &rarr; `archiveArtifacts: Archive...` &rarr;
       - Files to archive = `**/hello-1.0-SNAPSHOT.jar`
       - Select `Advanced`
         - Select `Do not fail build if archiving returns nothing`
@@ -109,7 +109,7 @@ pipeline {
                 testResults: '**/TEST-com.learningjenkins.AppTest.xml'
 
             archiveArtifacts allowEmptyArchive: true,
-                artifacts: '**/hello-1.0-SNAPSHOT.jar',
+                artifacts: '**/hello-1.0-SNAPSHOT.jar'
         }
     }
 }
