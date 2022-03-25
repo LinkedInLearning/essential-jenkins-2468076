@@ -1,7 +1,7 @@
 pipeline {
     agent { docker 'public.ecr.aws/docker/library/golang:latest' }
     environment {
-      GOCACHE = "${env.WORKSPACE}/cache"
+      GOCACHE = "${env.WORKSPACE}/.build_cache"
     }
     options {
         buildDiscarder(logRotator(daysToKeepStr: '10', numToKeepStr: '10'))

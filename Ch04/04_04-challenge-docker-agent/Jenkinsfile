@@ -2,7 +2,7 @@ pipeline {
     agent { docker 'public.ecr.aws/docker/library/golang:latest' }
     environment {
       // moving the cache to the workspace might speed up
-      // the build stage.  maybe ${env.WORKSPACE}/cache?
+      // the build stage.  maybe use ${env.WORKSPACE}/.build_cache?
       GOCACHE = "/tmp"
     }
     options {
