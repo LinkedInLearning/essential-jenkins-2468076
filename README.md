@@ -7,11 +7,6 @@ If you want to build, deploy, and implement continuous delivery as code, you’v
 
 Learn about the core functions of Jenkins, progressing from intermediate to more advanced use cases and highlighting best practices and customization tips. Find out how to create a pipeline, integrate Jenkins with version control systems, distribute agents like Docker containers, run and publish tests, produce artifacts for review, and secure your DevOps loop by configuring users and permissions. Try out your new skills along the way in the challenges at the end of each section.
 
-## Instructions
-This repository has directories for each of the videos in the course.
-
-The directories are structured to correspond to the videos in the course. The naming convention is `CHAPTER#_MOVIE#_Description`. As an example, the directory named `02_03` corresponds to the second chapter and the third video in that chapter. 
-
 ## Installing
 1. To use these exercise files, you must have one of the following versions of Jenkins installed:
 	- Jenkins 2.332.2 LTS or newer
