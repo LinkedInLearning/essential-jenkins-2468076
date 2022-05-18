@@ -1,7 +1,12 @@
 # Jenkins Essential Training
-This is the repository for the LinkedIn Learning course `Jenkins Essential Training`. The full course is available from [LinkedIn Learning][lil-course-url].
+This is the repository for the LinkedIn Learning course Jenkins Essential Training. The full course is available from [LinkedIn Learning][lil-course-url].
 
-_See the README file in the main branch for updated instructions and information._
+![Jenkins Essential Training][lil-thumbnail-url] 
+
+If you want to build, deploy, and implement continuous delivery as code, you’ve likely heard about Jenkins, the popular DevOps suite known for its open-source extensibility and ease of use. Jenkins also lets you automate your entire enterprise as a software delivery pipeline. In this course, instructor Michael Jenkins shows you the fundamentals of navigating the platform so you can start automating builds and testing and securing deployments.
+
+Learn about the core functions of Jenkins, progressing from intermediate to more advanced use cases and highlighting best practices and customization tips. Find out how to create a pipeline, integrate Jenkins with version control systems, distribute agents like Docker containers, run and publish tests, produce artifacts for review, and secure your DevOps loop by configuring users and permissions. Try out your new skills along the way in the challenges at the end of each section.
+
 ## Instructions
 This repository has directories for each of the videos in the course.
 
@@ -16,8 +21,15 @@ The directories are structured to correspond to the videos in the course. The na
 2. Clone this repository into your local machine using the terminal (Mac), CMD (Windows), or a GUI tool like SourceTree.
 3. Follow any additional instructions in the README file for each lesson.
 
+### Instructor
 
-[0]: # (Replace these placeholder URLs with actual course URLs)
+Michael Jenkins 
+                            
+Senior Systems Reliability Engineer
 
-[lil-course-url]: https://www.linkedin.com/learning/
-[lil-thumbnail-url]: http://
+                            
+
+Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/michael-jenkins).
+
+[lil-course-url]: https://www.linkedin.com/learning/jenkins-essential-training-17420152
+[lil-thumbnail-url]: https://cdn.lynda.com/course/2468076/2468076-1652724717815-16x9.jpg
