@@ -9,7 +9,7 @@ Learn about the core functions of Jenkins, progressing from intermediate to more
 
 ## Installing
 1. To use these exercise files, you must have one of the following versions of Jenkins installed:
-	- Jenkins 2.332.2 LTS or newer
+    - Jenkins 2.332.2 LTS or newer
     - Jenkins 2.342 or newer
     - Ubuntu 20.04 or newer (for exercise files related to installing Jenkins on a system running the Ubuntu Linux operating system)
 
@@ -20,7 +20,7 @@ Learn about the core functions of Jenkins, progressing from intermediate to more
 
 Michael Jenkins 
                             
-Senior Systems Reliability Engineer
+Lead Software Engineer, Systems Reliability Engineer
 
                             
 
