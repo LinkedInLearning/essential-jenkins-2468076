@@ -36,7 +36,8 @@ The exercise files for this lesson include a [Jenkinsfile](./Jenkinsfile) and a 
 - Create a new GitHub repo and add the exercise files.
   - Add the `Jenkinsfile` to the root of the repo.
   - Add the `fibonacci.sh` file to a directory named `scripts`.
-  - *NOTE: The `fibonacci.sh` file must be placed in a subdirectory named `scripts` for the pipeline to run successfully.*
+  
+- *NOTE: The `fibonacci.sh` file must be placed in a subdirectory named `scripts` for the pipeline to run successfully.*
 
 - Create a new pipeline project in your Jenkins server.
     - Select `New Item`
