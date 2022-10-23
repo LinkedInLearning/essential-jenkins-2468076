@@ -19,9 +19,9 @@ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
 # install java, nginx, and jenkins
 echo "# $(date) Install Java 11, NGINX, and Jenkins..."
 apt update
-apt-get -qq upgrade
+apt-get -y upgrade
 
-apt-get -qq install \
+apt-get -y install \
     openjdk-11-jdk \
     nginx \
     ca-certificates \
@@ -29,7 +29,7 @@ apt-get -qq install \
     gnupg \
     lsb-release
 
-apt-get -qq install jenkins
+apt-get -y install jenkins
 
 # configure jenkins
 echo "# $(date) Configure Jenkins..."
@@ -94,7 +94,7 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | \
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu  $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 apt update
-apt-get -qq install docker-ce docker-ce-cli containerd.io
+apt-get -y install docker-ce docker-ce-cli containerd.io
 docker run hello-world
 
 systemctl enable docker.service
