@@ -9,7 +9,7 @@ echo "# $(date) Installation is starting."
 #exec > >(tee /var/log/user-data.log|logger -t user-data -s 2>/dev/console) 2>&1
 
 echo "# $(date) Install jenkins key and package configuration..."
-curl -fsSL https://pkg.jenkins.io/debian/jenkins.io.key | tee \
+curl -fsSL https://pkg.jenkins.io/debian/jenkins.io-2023.key | tee \
     /usr/share/keyrings/jenkins-keyring.asc > /dev/null
 
 echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
