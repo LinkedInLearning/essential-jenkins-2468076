@@ -17,12 +17,12 @@ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
     /etc/apt/sources.list.d/jenkins.list > /dev/null
 
 # install java, nginx, and jenkins
-echo "# $(date) Install Java 11, NGINX, and Jenkins..."
+echo "# $(date) Install Java 21, NGINX, and Jenkins..."
 apt update
 apt-get -y upgrade
 
 apt-get -y install \
-    openjdk-11-jdk \
+    openjdk-21-jdk \
     nginx \
     ca-certificates \
     curl \
